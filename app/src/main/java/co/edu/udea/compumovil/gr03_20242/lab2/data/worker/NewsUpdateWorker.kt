@@ -13,7 +13,7 @@ class NewsUpdateWorker(appContext: Context, workerParams: WorkerParameters) :
 
         override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
             return@withContext try {
-                repository.getTopHeadlines("YOUR_API_KEY")
+                repository.getTopHeadlines("5aaa5f25f0b74cd1b26ac4be9f27d60d")
                 Result.success()
             } catch (e: Exception) {
                 Result.retry()

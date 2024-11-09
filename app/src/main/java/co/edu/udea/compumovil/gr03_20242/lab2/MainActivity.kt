@@ -22,7 +22,6 @@ import java.util.concurrent.TimeUnit
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
         // Configura el Worker para actualizar las noticias cada 15 minutos
         val newsUpdateRequest = PeriodicWorkRequestBuilder<NewsUpdateWorker>(15, TimeUnit.MINUTES).build()
         WorkManager.getInstance(this).enqueue(newsUpdateRequest)
